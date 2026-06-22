@@ -1,287 +1,110 @@
 <!doctype html>
-<html lang="en">
+<html lang="cs">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Arenix Training Arena — V6 Languages + Credits</title>
+  <title>ARENIX — Forex & Crypto Community Creator Tool</title>
   <style>
-    :root{--bg:#05070c;--line:rgba(255,255,255,.10);--muted:rgba(255,255,255,.62);--emerald:#34d399}
-    *{box-sizing:border-box}html,body{height:100%;overflow:hidden}body{margin:0;background:var(--bg);color:#fff;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}button,input,select,textarea{font:inherit}
-    .bgfx{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:
-      radial-gradient(circle at 18% 18%,rgba(52,211,153,.13),transparent 30%),
-      radial-gradient(circle at 78% 28%,rgba(59,130,246,.14),transparent 34%),
-      radial-gradient(circle at 70% 82%,rgba(245,158,11,.075),transparent 31%),
-      linear-gradient(135deg,#04070c 0%,#07111c 45%,#04070c 100%)}
-    .blob{position:absolute;border-radius:999px;filter:blur(140px);opacity:.62;animation:slowDrift 18s ease-in-out infinite alternate}.b1{left:-12rem;top:-12rem;width:34rem;height:34rem;background:rgba(52,211,153,.14)}.b2{right:-15rem;top:10rem;width:36rem;height:36rem;background:rgba(37,99,235,.15);animation-delay:-6s}.b3{bottom:-18rem;left:30%;width:40rem;height:40rem;background:rgba(245,158,11,.055);animation-delay:-11s}.gridfx{position:absolute;inset:0;background-image:
-      linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
-      background-size:78px 78px;opacity:.30;mask-image:radial-gradient(circle at 62% 48%,#000 0%,transparent 76%)}
-    .bgfx:before{content:"";position:absolute;inset:-18%;background:
-      conic-gradient(from 210deg at 72% 48%,transparent 0 42%,rgba(52,211,153,.08) 48%,transparent 56%,rgba(59,130,246,.06) 64%,transparent 78%);
-      filter:blur(6px);opacity:.82;animation:slowSpin 48s linear infinite}
-    .bgfx:after{content:"";position:absolute;inset:0;background:
-      radial-gradient(circle at 50% 50%,transparent 0 48%,rgba(0,0,0,.30) 100%),
-      linear-gradient(90deg,rgba(5,7,12,.68),transparent 34%,transparent 66%,rgba(5,7,12,.52));
-      opacity:.92}
-    @keyframes slowDrift{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(4rem,2rem,0) scale(1.08)}}@keyframes slowSpin{to{transform:rotate(360deg)}}
-    .page{position:relative;z-index:1;height:100%;overflow:hidden}.wrap{max-width:1280px;margin:0 auto;padding:0 24px}
-    header{position:relative;z-index:20;border-bottom:1px solid var(--line);background:rgba(5,7,12,.82);backdrop-filter:blur(24px)}.nav{height:64px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:flex;align-items:center;gap:12px}.logo{width:40px;height:40px;border-radius:16px;background:#fff;color:var(--bg);display:grid;place-items:center;font-weight:1000;box-shadow:0 0 36px rgba(255,255,255,.18)}.brand-main{font-size:12px;font-weight:1000;letter-spacing:.28em}.brand-sub{display:block;margin-top:2px;font-size:10px;font-weight:800;letter-spacing:.18em;color:rgba(255,255,255,.38);text-transform:uppercase}.dots{display:flex;gap:8px}.dot{height:10px;width:10px;border-radius:999px;background:rgba(255,255,255,.18);border:0;cursor:pointer}.dot.done{background:rgba(52,211,153,.50)}.dot.active{width:32px;background:var(--emerald)}.progress{height:4px;background:rgba(255,255,255,.05)}.progress div{height:100%;width:9%;background:var(--emerald);transition:.45s}
-    .lang{display:flex;gap:4px;border:1px solid var(--line);background:rgba(255,255,255,.04);border-radius:999px;padding:4px}.lang button{border:0;background:transparent;color:rgba(255,255,255,.55);border-radius:999px;padding:7px 10px;font-size:12px;font-weight:1000;cursor:pointer}.lang button.active{background:#fff;color:#071018}
-    .btn{border:0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;font-weight:1000;transition:.2s}.btn-primary{height:40px;padding:0 20px;background:var(--emerald);color:#071018;box-shadow:0 0 36px rgba(52,211,153,.22)}.btn-large{height:48px;padding:0 26px}.btn-ghost{height:48px;padding:0 24px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.72)}
-    .screen{height:calc(100vh - 68px);display:grid;grid-template-columns:.96fr 1.04fr;gap:48px;align-items:center;padding-top:28px;padding-bottom:28px}.tag{display:inline-flex;align-items:center;gap:12px;border:1px solid var(--line);background:rgba(255,255,255,.045);border-radius:999px;padding:7px 12px}.num{min-width:28px;height:28px;padding:0 8px;border-radius:999px;background:var(--emerald);color:#071018;display:grid;place-items:center;font-size:12px;font-weight:1000}.tag span:last-child{font-size:12px;font-weight:1000;letter-spacing:.20em;text-transform:uppercase;color:rgba(209,250,229,.80)}
-    h1{font-size:66px;line-height:.98;letter-spacing:-.06em;margin:24px 0 0;font-weight:1000}.lead{margin:24px 0 0;max-width:720px;color:var(--muted);font-size:18px;line-height:1.8;font-weight:700}.note{margin:14px 0 0;color:rgba(209,250,229,.70);font-size:14px;line-height:1.7;font-weight:800}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
-    .visual{position:relative}.glow{position:absolute;inset:-16px;border-radius:40px;background:linear-gradient(135deg,rgba(52,211,153,.18),rgba(59,130,246,.12),transparent);filter:blur(24px)}.panel{position:relative;border:1px solid rgba(255,255,255,.12);background:rgba(10,15,24,.88);border-radius:32px;padding:16px;box-shadow:0 35px 120px -75px rgba(59,130,246,.75);backdrop-filter:blur(24px)}.tiny{font-size:10px;font-weight:1000;letter-spacing:.20em;text-transform:uppercase;color:rgba(255,255,255,.36)}.statgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat,.box{border:1px solid var(--line);background:rgba(255,255,255,.035);border-radius:24px;padding:18px}.stat.active,.box.active{border-color:rgba(52,211,153,.30);background:rgba(52,211,153,.12);box-shadow:0 0 34px rgba(52,211,153,.14)}.big{margin-top:10px;font-size:52px;font-weight:1000;letter-spacing:-.06em}.sub{margin-top:8px;color:rgba(255,255,255,.52);font-size:14px;font-weight:800}.journey{display:grid;gap:12px}.journey-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.035);border-radius:18px;padding:12px}.rank{width:32px;height:32px;border-radius:12px;background:rgba(255,255,255,.08);display:grid;place-items:center;color:rgba(255,255,255,.52);font-size:12px;font-weight:1000}.jr-title{font-size:14px;font-weight:1000}.jr-text{margin-top:3px;font-size:11px;font-weight:800;color:rgba(255,255,255,.38)}.field{border:1px solid var(--line);background:rgba(0,0,0,.20);border-radius:18px;padding:14px;margin-top:12px}.field-value{margin-top:7px;font-size:14px;font-weight:1000;color:rgba(255,255,255,.78)}.ready{border-radius:999px;background:rgba(52,211,153,.10);padding:6px 10px;color:#d1fae5;font-size:10px;font-weight:1000;letter-spacing:.16em;text-transform:uppercase}.invite{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--line);background:rgba(255,255,255,.035);border-radius:18px;padding:14px;margin-top:12px}.credits{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.credit{border:1px solid var(--line);background:rgba(255,255,255,.035);border-radius:26px;padding:22px}.credit.active{border-color:rgba(52,211,153,.30);background:rgba(52,211,153,.12)}.chip{display:inline-block;border:1px solid rgba(52,211,153,.25);background:rgba(52,211,153,.12);color:#d1fae5;border-radius:999px;padding:8px 12px;font-size:20px;font-weight:1000;margin:4px}.leader{border:1px solid var(--line);background:rgba(0,0,0,.22);border-radius:28px;padding:16px}.leader-head{display:flex;justify-content:space-between;margin-bottom:14px}.lrow{display:grid;grid-template-columns:auto 1fr auto auto;gap:12px;align-items:center;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.035);border-radius:18px;padding:12px;margin-bottom:9px}.score{font-size:14px;font-weight:1000;color:#d1fae5}.signal{border-radius:999px;background:rgba(96,165,250,.10);padding:6px 10px;color:#bfdbfe;font-size:10px;font-weight:1000;letter-spacing:.16em;text-transform:uppercase}.mini-row{display:flex;gap:12px;align-items:center;border:1px solid var(--line);background:rgba(255,255,255,.035);border-radius:24px;padding:22px}.icon{width:44px;height:44px;border-radius:18px;background:rgba(52,211,153,.12);display:grid;place-items:center;font-size:24px}.comp-list{display:grid;gap:12px}.comp-line{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);background:rgba(255,255,255,.035);border-radius:20px;padding:16px}.shield{width:28px;height:28px;flex:0 0 auto;border-radius:12px;background:rgba(96,165,250,.10);color:#bfdbfe;display:grid;place-items:center}
-    .modal{display:none;position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.72);backdrop-filter:blur(10px);align-items:center;justify-content:center;padding:18px}.modal.open{display:flex}.modal-card{width:min(820px,100%);max-height:92vh;overflow:auto;background:#0a0f18;border:1px solid var(--line);border-radius:32px;box-shadow:0 30px 120px rgba(0,0,0,.45)}.modal-head{display:flex;justify-content:space-between;gap:18px;border-bottom:1px solid var(--line);padding:24px}.modal-body{padding:24px}.close{width:38px;height:38px;border-radius:999px;background:rgba(255,255,255,.10);color:rgba(255,255,255,.62);border:0;cursor:pointer;font-size:20px}.form{display:grid;grid-template-columns:1fr 1fr;gap:12px}label{display:grid;gap:7px;color:rgba(255,255,255,.66);font-size:14px;font-weight:900}input,textarea{min-height:44px;border:1px solid var(--line);background:rgba(255,255,255,.06);color:#fff;border-radius:18px;padding:11px 14px;outline:none;font-size:15px;font-weight:700}textarea{min-height:110px}.full{grid-column:1/-1}.submit{grid-column:1/-1;height:48px;background:var(--emerald);color:#071018;border:0;border-radius:999px;font-weight:1000;cursor:pointer}.choices{display:grid;grid-template-columns:1fr 1fr;gap:8px}.choice{min-height:44px;border:1px solid var(--line);background:rgba(255,255,255,.045);color:rgba(255,255,255,.68);border-radius:18px;padding:10px 12px;text-align:left;font-weight:900;cursor:pointer}.choice.active{border-color:rgba(52,211,153,.35);background:rgba(52,211,153,.14);color:#d1fae5;box-shadow:0 0 24px rgba(52,211,153,.12)}
-
-    /* Premium 2026 background layer — luxury crypto + clean forex, no external libraries */
-    .arena-canvas{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.72;mix-blend-mode:screen}
-    .cursor-aura{position:fixed;left:0;top:0;width:300px;height:300px;margin:-150px 0 0 -150px;border-radius:999px;pointer-events:none;z-index:2;background:radial-gradient(circle,rgba(52,211,153,.16),rgba(96,165,250,.09) 38%,rgba(245,158,11,.045) 54%,transparent 72%);filter:blur(14px);transform:translate3d(-999px,-999px,0);transition:opacity .25s ease;opacity:.86}
-    .vignette{position:fixed;inset:0;z-index:0;pointer-events:none;background:
-      radial-gradient(circle at 72% 50%,transparent 0,rgba(5,7,12,.10) 34%,rgba(5,7,12,.74) 100%),
-      linear-gradient(180deg,rgba(5,7,12,.12),transparent 32%,rgba(5,7,12,.22))}
-    .screen{transition:opacity .22s ease,transform .22s ease,filter .22s ease}.screen.is-switching{opacity:.15;transform:translateY(12px) scale(.992);filter:blur(6px)}
-    .panel,.box,.stat,.credit,.leader,.mini-row,.comp-line,.choice,.btn,.dot{will-change:transform,opacity}.panel{transform:perspective(1200px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}.panel:hover{border-color:rgba(52,211,153,.26);box-shadow:0 42px 140px -75px rgba(52,211,153,.72)}
-    .stat,.box,.credit,.mini-row,.comp-line,.lrow,.journey-row{transition:transform .18s ease,border-color .18s ease,background .18s ease}.stat:hover,.box:hover,.credit:hover,.mini-row:hover,.comp-line:hover,.lrow:hover,.journey-row:hover{transform:translateY(-2px);border-color:rgba(52,211,153,.24);background:rgba(255,255,255,.055)}
-    .btn-primary{position:relative;overflow:hidden}.btn-primary:before{content:"";position:absolute;inset:-120% auto auto -40%;width:45%;height:300%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);transform:rotate(25deg);animation:shine 4.2s ease-in-out infinite}.btn-primary>*{position:relative}@keyframes shine{0%,72%{left:-55%}100%{left:125%}}
-    .tech-orbit{position:absolute;right:5%;top:50%;width:42vmin;height:42vmin;transform:translateY(-50%);border-radius:999px;border:1px solid rgba(52,211,153,.10);pointer-events:none;opacity:.34;animation:orbitPulse 7s ease-in-out infinite}.tech-orbit:before,.tech-orbit:after{content:"";position:absolute;inset:12%;border-radius:999px;border:1px solid rgba(96,165,250,.12);animation:spin 18s linear infinite}.tech-orbit:after{inset:27%;border-color:rgba(245,158,11,.13);animation-duration:11s;animation-direction:reverse}@keyframes spin{to{transform:rotate(360deg)}}@keyframes orbitPulse{0%,100%{transform:translateY(-50%) scale(.98);opacity:.26}50%{transform:translateY(-50%) scale(1.04);opacity:.42}}
-    @media(max-width:950px){.arena-canvas{display:block;opacity:.30}.cursor-aura,.tech-orbit{display:none}.vignette{background:linear-gradient(180deg,rgba(5,7,12,.04),rgba(5,7,12,.28))}.screen{transition:none}.bgfx:before{animation:none;opacity:.42}.blob{animation:none;filter:blur(120px);opacity:.42}.gridfx{opacity:.16;background-size:64px 64px}}
-    @media(prefers-reduced-motion:reduce){.arena-canvas,.cursor-aura,.tech-orbit{display:none}.blob,.bgfx:before{animation:none}.screen{transition:none}}
-
-    @media(max-width:950px){html,body{overflow:auto}.page{height:auto;overflow:visible}.screen{min-height:calc(100vh - 68px);height:auto;grid-template-columns:1fr;padding-top:30px;padding-bottom:80px}.wrap{padding:0 18px}.dots{display:none}h1{font-size:42px}.lead{font-size:16px}.statgrid,.credits,.choices{grid-template-columns:1fr}.signal{display:none}.lrow{grid-template-columns:auto 1fr auto}.form{grid-template-columns:1fr}}
+    :root{
+      --bg:#04070d;--panel:#09111d;--line:rgba(255,255,255,.12);--muted:rgba(255,255,255,.66);
+      --text:#fff;--emerald:#35e3a2;--cyan:#69d7ff;--gold:#f6c35b;--radius:32px;
+      --shadow:0 40px 120px rgba(0,0,0,.45)
+    }
+    *{box-sizing:border-box} html,body{min-height:100%;margin:0}
+    body{background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;overflow-x:hidden}
+    button,input,textarea{font:inherit}
+    .bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;background:
+      radial-gradient(circle at 16% 16%,rgba(53,227,162,.15),transparent 28%),
+      radial-gradient(circle at 82% 22%,rgba(105,215,255,.12),transparent 34%),
+      radial-gradient(circle at 78% 82%,rgba(246,195,91,.08),transparent 30%),
+      linear-gradient(135deg,#03050a,#07111d 52%,#03050a)}
+    .bg:before{content:"";position:absolute;inset:-25%;background:conic-gradient(from 180deg at 65% 45%,transparent 0 35%,rgba(53,227,162,.09),transparent 52%,rgba(105,215,255,.075),transparent 76%);animation:slowSpin 54s linear infinite;filter:blur(10px)}
+    .bg:after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.026) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.026) 1px,transparent 1px);background-size:74px 74px;opacity:.42;mask-image:radial-gradient(circle at 60% 45%,#000 0%,transparent 74%)}
+    @keyframes slowSpin{to{transform:rotate(360deg)}}
+    .float-symbols{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;opacity:.32}.sym{position:absolute;font-weight:1000;color:rgba(255,255,255,.09);animation:floatUp linear infinite;text-shadow:0 0 30px rgba(53,227,162,.12)}.sym.gold{color:rgba(246,195,91,.105)}.sym.cyan{color:rgba(105,215,255,.09)}
+    @keyframes floatUp{from{transform:translate3d(0,18vh,0) rotate(0deg)}to{transform:translate3d(0,-118vh,0) rotate(360deg)}}
+    .page{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column}.wrap{max-width:1240px;margin:0 auto;width:100%;padding:0 22px}
+    header{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line);background:rgba(4,7,13,.76);backdrop-filter:blur(22px)}
+    .nav{height:68px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:12px;min-width:0}
+    .logo{width:42px;height:42px;border-radius:16px;background:#fff;color:#051018;display:grid;place-items:center;font-weight:1000;box-shadow:0 0 42px rgba(255,255,255,.16)}
+    .brand-title{font-size:12px;letter-spacing:.28em;font-weight:1000;white-space:nowrap}.brand-sub{display:block;color:rgba(255,255,255,.43);font-size:10px;letter-spacing:.18em;text-transform:uppercase;margin-top:2px;font-weight:900}
+    .step-dots{display:flex;gap:7px;align-items:center;justify-content:center;flex:1}.dot{height:9px;width:9px;border:0;border-radius:99px;background:rgba(255,255,255,.18);cursor:pointer;transition:.2s}.dot.active{width:34px;background:var(--emerald);box-shadow:0 0 26px rgba(53,227,162,.28)}.dot.done{background:rgba(53,227,162,.48)}
+    .top-actions{display:flex;align-items:center;gap:10px}.pill{border:1px solid var(--line);background:rgba(255,255,255,.045);color:rgba(255,255,255,.76);border-radius:99px;padding:8px 12px;font-size:12px;font-weight:1000;letter-spacing:.04em;white-space:nowrap}
+    .progress{height:4px;background:rgba(255,255,255,.05)}.progress>div{height:100%;width:10%;background:linear-gradient(90deg,var(--emerald),var(--cyan));box-shadow:0 0 28px rgba(53,227,162,.26);transition:.35s ease}
+    main{flex:1;display:flex}.screen{width:100%;min-height:calc(100vh - 72px);display:grid;grid-template-columns:.92fr 1.08fr;gap:44px;align-items:center;padding-top:34px;padding-bottom:34px}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);background:rgba(255,255,255,.045);border-radius:99px;padding:7px 12px;color:rgba(209,250,229,.90);font-size:12px;font-weight:1000;letter-spacing:.16em;text-transform:uppercase}
+    .num{width:28px;height:28px;border-radius:99px;display:grid;place-items:center;background:var(--emerald);color:#061018;font-weight:1000;letter-spacing:0}
+    h1{font-size:clamp(42px,5.2vw,76px);line-height:.94;letter-spacing:-.065em;margin:24px 0 0;max-width:790px;font-weight:1000}
+    .subline{margin:24px 0 0;max-width:760px;color:var(--muted);font-size:18px;line-height:1.72;font-weight:720}.note{margin:16px 0 0;max-width:720px;color:rgba(209,250,229,.82);font-size:14px;line-height:1.62;font-weight:900}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.btn{border:0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:99px;font-weight:1000;transition:.2s;min-height:48px;padding:0 24px;text-decoration:none}
+    .btn-primary{color:#061018;background:linear-gradient(135deg,var(--emerald),#b7ffe1);box-shadow:0 0 38px rgba(53,227,162,.24);position:relative;overflow:hidden}.btn-primary:before{content:"";position:absolute;inset:-120% auto auto -50%;width:45%;height:310%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);transform:rotate(25deg);animation:shine 4.5s ease-in-out infinite}
+    @keyframes shine{0%,72%{left:-55%}100%{left:125%}}.btn-ghost{background:rgba(255,255,255,.045);color:rgba(255,255,255,.76);border:1px solid rgba(255,255,255,.13)}
+    .visual{position:relative;transition:opacity .18s ease,transform .18s ease,filter .18s ease}.switching .visual,.switching .copy{opacity:.18;transform:translateY(12px);filter:blur(6px)}
+    .visual-glow{position:absolute;inset:-18px;border-radius:44px;background:linear-gradient(135deg,rgba(53,227,162,.22),rgba(105,215,255,.14),rgba(246,195,91,.08),transparent);filter:blur(28px);opacity:.9}
+    .card{position:relative;border:1px solid rgba(255,255,255,.14);background:linear-gradient(180deg,rgba(12,22,36,.92),rgba(7,13,22,.90));border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);backdrop-filter:blur(22px);overflow:hidden}.card:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 10%,rgba(53,227,162,.13),transparent 38%);pointer-events:none}
+    .card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:18px;position:relative}.tiny{font-size:10px;font-weight:1000;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.40)}
+    .card-title{font-size:24px;font-weight:1000;letter-spacing:-.035em;margin:5px 0 0}.badge{border:1px solid rgba(53,227,162,.25);background:rgba(53,227,162,.12);color:#d8ffed;border-radius:99px;padding:7px 10px;font-size:10px;font-weight:1000;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;position:relative}.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;position:relative}.box{border:1px solid rgba(255,255,255,.11);background:rgba(255,255,255,.04);border-radius:24px;padding:17px;min-height:104px}.box.active{border-color:rgba(53,227,162,.34);background:rgba(53,227,162,.12);box-shadow:0 0 34px rgba(53,227,162,.12)}.box.gold{border-color:rgba(246,195,91,.24);background:rgba(246,195,91,.08)}.big{font-size:44px;font-weight:1000;letter-spacing:-.055em;margin-top:8px}.small{font-size:13px;color:rgba(255,255,255,.56);font-weight:780;line-height:1.45;margin-top:6px}
+    .flow{display:grid;gap:10px;position:relative}.flow-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.04);border-radius:18px;padding:13px;position:relative}.rank{width:34px;height:34px;border-radius:13px;background:rgba(255,255,255,.08);display:grid;place-items:center;font-size:12px;font-weight:1000;color:rgba(255,255,255,.64)}.flow-title{font-weight:1000}.flow-sub{font-size:11px;color:rgba(255,255,255,.43);font-weight:800;margin-top:3px}.status{border-radius:99px;padding:6px 9px;font-size:10px;font-weight:1000;letter-spacing:.12em;text-transform:uppercase;background:rgba(105,215,255,.10);color:#caefff}.status.green{background:rgba(53,227,162,.12);color:#d8ffed}.status.gold{background:rgba(246,195,91,.12);color:#ffe6a3}
+    .lifecycle{position:relative;display:grid;gap:12px}.life-line{position:absolute;left:17px;top:44px;bottom:44px;width:2px;background:linear-gradient(var(--emerald),var(--cyan),var(--gold));opacity:.45}.life{display:grid;grid-template-columns:36px 1fr auto;gap:12px;align-items:center;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.04);border-radius:18px;padding:12px;position:relative}.life-dot{width:34px;height:34px;border-radius:99px;background:rgba(53,227,162,.16);border:1px solid rgba(53,227,162,.34);display:grid;place-items:center;font-weight:1000;color:#d8ffed}.value{font-size:22px;font-weight:1000;color:#d8ffed;letter-spacing:-.02em}
+    .leader{display:grid;gap:9px;position:relative}.leader-row{display:grid;grid-template-columns:auto 1fr auto auto;gap:11px;align-items:center;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.04);border-radius:18px;padding:12px}.score{font-weight:1000;color:#d8ffed}
+    .dots100{display:grid;grid-template-columns:repeat(20,1fr);gap:6px;position:relative}.trader-dot{aspect-ratio:1;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.06)}.trader-dot.reward{background:rgba(53,227,162,.72);box-shadow:0 0 14px rgba(53,227,162,.28)}
+    .metric-row{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;position:relative}.metric{border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.04);border-radius:20px;padding:15px;text-align:center}.metric .big{font-size:30px}
+    .lock-list{display:grid;gap:11px;position:relative}.lock-item{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.04);border-radius:18px;padding:14px}.check{width:28px;height:28px;border-radius:12px;background:rgba(53,227,162,.14);display:grid;place-items:center;color:#d8ffed;font-weight:1000}
+    .modal{display:none;position:fixed;inset:0;z-index:100;align-items:center;justify-content:center;background:rgba(0,0,0,.74);backdrop-filter:blur(12px);padding:18px}.modal.open{display:flex}.modal-card{width:min(760px,100%);max-height:92vh;overflow:auto;background:#0a111d;border:1px solid var(--line);border-radius:32px;box-shadow:var(--shadow)}.modal-head{display:flex;justify-content:space-between;gap:18px;padding:24px;border-bottom:1px solid var(--line)}.modal-body{padding:24px}.close{width:40px;height:40px;border-radius:99px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.10);cursor:pointer;font-size:22px}.form{display:grid;grid-template-columns:1fr 1fr;gap:12px}label{display:grid;gap:7px;font-size:13px;font-weight:900;color:rgba(255,255,255,.70)}input,textarea{border:1px solid var(--line);background:rgba(255,255,255,.06);color:#fff;border-radius:18px;padding:12px 14px;outline:none;min-height:46px}textarea{min-height:118px}.full{grid-column:1/-1}.submit{grid-column:1/-1;border:0;border-radius:99px;background:linear-gradient(135deg,var(--emerald),#b7ffe1);color:#061018;font-weight:1000;min-height:50px;cursor:pointer}
+    @media(max-width:960px){.step-dots{display:none}.pill{display:none}.nav{height:62px}.logo{width:38px;height:38px;border-radius:14px}.brand-title{font-size:11px}.wrap{padding:0 16px}.screen{min-height:auto;display:block;padding-top:26px;padding-bottom:88px}h1{font-size:42px;line-height:.98;margin-top:20px;letter-spacing:-.055em}.subline{font-size:16px;line-height:1.65;margin-top:18px}.note{font-size:13px}.actions{position:sticky;bottom:10px;z-index:30;background:rgba(4,7,13,.72);backdrop-filter:blur(18px);padding:10px;border:1px solid rgba(255,255,255,.10);border-radius:24px;margin-top:24px}.btn{flex:1;padding:0 15px}.visual{margin-top:22px}.card{border-radius:28px;padding:16px}.card-title{font-size:20px}.grid3,.grid2,.metric-row{grid-template-columns:1fr}.box{min-height:auto}.big{font-size:34px}.leader-row{grid-template-columns:auto 1fr auto}.leader-row .status{display:none}.dots100{grid-template-columns:repeat(10,1fr);gap:5px}.form{grid-template-columns:1fr}.float-symbols{opacity:.20}.sym{font-size:18px!important}.bg:before{animation:none;opacity:.54}}
   </style>
 </head>
 <body>
-<div class="bgfx"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="gridfx"></div></div>
-<canvas id="arenaCanvas" class="arena-canvas"></canvas><div id="cursorAura" class="cursor-aura"></div><div class="vignette"></div><div class="tech-orbit"></div>
-<div class="page">
-<header><div class="wrap nav"><div class="brand"><span class="logo">A</span><span><span class="brand-main">ARENIX</span><span class="brand-sub">Training Arena</span></span></div><div id="dots" class="dots"></div><div style="display:flex;align-items:center;gap:8px"><div class="lang"><button onclick="setLang('en')" id="lang-en" class="active">EN</button><button onclick="setLang('cs')" id="lang-cs">CZ</button><button onclick="setLang('de')" id="lang-de">DE</button></div><button class="btn btn-primary" onclick="openRequest()">Apply</button></div></div><div class="progress"><div id="progressBar"></div></div></header>
-<main><section class="wrap screen"><div><div class="tag"><span id="num" class="num">01</span><span id="eyebrow"></span></div><h1 id="title"></h1><p id="text" class="lead"></p><p id="note" class="note"></p><div class="actions"><button id="continueBtn" class="btn btn-primary btn-large" onclick="goNext()">Continue →</button><button id="backBtn" class="btn btn-ghost" onclick="goBack()">Back</button></div></div><div id="visual" class="visual"></div></section></main>
+<div class="bg"></div>
+<div class="float-symbols" aria-hidden="true">
+  <span class="sym" style="left:8%;top:90%;font-size:34px;animation-duration:28s;">₿</span>
+  <span class="sym gold" style="left:22%;top:120%;font-size:28px;animation-duration:36s;">AC</span>
+  <span class="sym cyan" style="left:42%;top:105%;font-size:32px;animation-duration:31s;">FX</span>
+  <span class="sym" style="left:68%;top:112%;font-size:26px;animation-duration:34s;">$</span>
+  <span class="sym gold" style="left:82%;top:98%;font-size:30px;animation-duration:39s;">€</span>
 </div>
-<div id="requestModal" class="modal"><div class="modal-card"><div class="modal-head"><div><div class="tag"><span class="num">A</span><span id="formEyebrow">Partner application</span></div><h2 id="formTitle" style="font-size:32px;margin:18px 0 0"></h2><p id="formSubtitle" class="lead" style="font-size:14px;margin-top:8px"></p></div><button class="close" onclick="closeModals()">×</button></div><div class="modal-body"><form class="form" onsubmit="event.preventDefault(); alert('Preview only. On live page this sends WhatsApp application.');"><label id="labelName">Name<input></label><label id="labelEmail">Email<input type="email"></label><label id="labelWhatsApp">WhatsApp<input></label><label id="labelSize">Community size<input></label><div><label id="labelRole">Role / profile</label><div id="roleChoices" class="choices"></div></div><div><label id="labelMarket">Market focus</label><div id="marketChoices" class="choices"></div></div><div class="full"><label id="labelStatus">Community status</label><div id="statusChoices" class="choices"></div></div><label id="labelChannels">Main channels<input id="channelsInput"></label><label class="full" id="labelIntro">Short introduction<textarea id="introText"></textarea></label><button id="submitBtn" class="submit" type="submit">Send Application on WhatsApp</button></form></div></div></div>
+<div class="page">
+  <header><div class="wrap nav"><div class="brand"><div class="logo">A</div><div><span class="brand-title">ARENIX</span><span class="brand-sub">Training Arena</span></div></div><div id="dots" class="step-dots"></div><div class="top-actions"><span class="pill">Private Partner Access</span><button class="btn btn-primary" onclick="openApply()">Apply</button></div></div><div class="progress"><div id="progressBar"></div></div></header>
+  <main><section id="screen" class="wrap screen"><div class="copy"><div class="eyebrow"><span id="num" class="num">01</span><span id="kicker">Tool</span></div><h1 id="headline"></h1><p id="subline" class="subline"></p><p id="note" class="note"></p><div class="actions"><button id="continueBtn" class="btn btn-primary" onclick="goNext()">Pokračovat →</button><button id="backBtn" class="btn btn-ghost" onclick="goBack()">Zpět</button></div></div><div id="visual" class="visual"></div></section></main>
+</div>
+<div id="applyModal" class="modal"><div class="modal-card"><div class="modal-head"><div><div class="eyebrow"><span class="num">A</span><span>Partner Access</span></div><h2 style="font-size:32px;letter-spacing:-.035em;margin:18px 0 0">Požádat o Partner Access</h2><p class="subline" style="font-size:14px;margin-top:8px">Privátní přístup pro schválené partnery. Toto je preview formulář.</p></div><button class="close" onclick="closeApply()">×</button></div><div class="modal-body"><form class="form" onsubmit="event.preventDefault(); alert('Preview only.');"><label>Jméno<input placeholder="Vaše jméno"></label><label>E-mail<input type="email" placeholder="email@example.com"></label><label>WhatsApp<input placeholder="+971..."></label><label>Velikost komunity<input placeholder="např. 500 členů"></label><label class="full">Hlavní kanály<input placeholder="Telegram, Discord, WhatsApp, YouTube..."></label><label class="full">Krátké představení<textarea placeholder="Co děláte a jakou komunitu chcete vytvořit, zvětšit nebo aktivovat?"></textarea></label><button class="submit" type="submit">Odeslat přihlášku</button></form></div></div></div>
 <script>
-const data={
-en:{apply:'Apply',continue:'Continue',back:'Back',applyAccess:'Apply for Partner Access',form:{eyebrow:'Partner application',title:'Apply for Partner Access.',subtitle:'This is not a session creation request. Tell us who you are, what you do and what kind of Forex or Crypto community you want to build or activate.',name:'Name',email:'Email',whatsapp:'WhatsApp',size:'Community size',role:'Role / profile',market:'Market focus',status:'Community status',channels:'Main channels',channelsPh:'WhatsApp, Telegram, Discord, Instagram, YouTube...',intro:'Short introduction',introPh:'Tell us what you do, what kind of audience you have or want to build, and why Training Arena is interesting for you...',submit:'Send Application on WhatsApp'},steps:[
-['Forex & Crypto community growth tool','Build your trader community through private Training Arenas.','For Forex and Crypto educators, IBs, affiliates, creators and community builders who want to attract, activate and understand serious traders.','Not an investment offer. Training first.','hero'],
-['The problem','Followers are easy to collect. Serious traders are harder to find.','Most people watch, read, click and disappear. Training Arena gives them a reason to act, join a session and show real interest.','','audience'],
-['Step 1','Create a private Training Session.','Set up a branded session for your Forex or Crypto audience. It works for partner who already have a community — and for partner who want to build one.','','session'],
-['Step 2','Invite Traders with a simple link.','Send your private invite link through WhatsApp, Telegram, Discord, Instagram, YouTube or your own contact list. Your community stays yours. We provide the Training Arena only.','','invite'],
-['Step 3','They join with Arena Credits.','Training Mode uses Arena Credits. Members can join different training sessions using 20, 50, 100, 200 or 500 Arena Credits.','','credits'],
-['Step 4','The leaderboard creates attention.','Traders see activity, movement and ranking. You see who joined, who completed, who stayed active and who deserves follow-up.','','leaderboard'],
-['Partner dashboard','Turn activity into a community growth signal.','Your dashboard helps you identify active participants, serious members and people worth contacting again.','','dashboard'],
-['Business direction','Training sessions first. Monetization later.','Start with onboarding, engagement and training. When approved commercial mode is ready, partners already understand how the model can be monetized.','The first message is growth and engagement.','monetization'],
-['Partner approval','Request access first. Create sessions after approval.','The registration form is only a partner application. It helps us understand who you are, what you do, what audience you have or want to build, and whether Training Arena is a fit.','','approval'],
-['Clear position','Private training environment for approved partners.','Training Arena is not a broker, does not provide investment advice and does not hold client funds in Training Mode.','','compliance'],
-['Partner registration','Apply for Partner Access.','Tell us about your Forex or crypto audience. After review, approved partners can start with their first private Training Arena.','Your community stays yours. We provide the arena.','final']
-],roles:['Forex educator / mentor','Crypto educator / mentor','IB / affiliate','Community owner','Content creator / influencer','I want to build a new community','Other'],markets:['Forex','Crypto','Forex + Crypto','Trading education generally'],statuses:['I already have a community','I have a small audience and want to grow it','I want to build a new community','I have leads / database / clients','I am exploring the model']},
-cs:{apply:'Registrovat',continue:'Pokračovat',back:'Zpět',applyAccess:'Požádat o partnerský přístup',form:{eyebrow:'Partnerská přihláška',title:'Požádat o Partner Access.',subtitle:'Toto není žádost o vytvoření session. Napište nám, kdo jste, co děláte a jakou Forex nebo crypto komunitu máte nebo chcete budovat.',name:'Jméno',email:'E-mail',whatsapp:'WhatsApp',size:'Velikost komunity',role:'Role / profil',market:'Zaměření trhu',status:'Stav komunity',channels:'Hlavní kanály',channelsPh:'WhatsApp, Telegram, Discord, Instagram, YouTube...',intro:'Krátké představení',introPh:'Napište, co děláte, jaké publikum máte nebo chcete budovat a proč vás Training Arena zajímá...',submit:'Odeslat přihlášku přes WhatsApp'},steps:[
-['Privátní Training Arena dáva Traderům důvod se zapojit','Nástroj pro růst vaší Forex a Crypto komunity.','Pro majitele Forex a Crypto komunity, IBs, affiliate partnery, tvůrce obsahu a komunitní buildery, kteří chtějí přitáhnout, aktivovat a poznat seriózní tradery.','Není to investiční nabídka. Nejdřív trénink.','hero'],
-['Problém','Publikum už máte. Teď zjistěte, kdo se skutečně zapojí.','Většina lidí sleduje, čte, klikne a zmizí. Training Arena jim dá důvod jednat, vstoupit do session a ukázat skutečný zájem.','','audience'],
-['Krok 1','Otevřete vlastní Training Arenu pro své Tradery.','Během pár kliknutí vytvoříte session pro svou komunitu a získate místo, kam můžete své publikum pozvat.','','session'],
-['Krok 2','Jeden Link. A vaše komunita může vstoupit do Arény.','Soukromý invite link pošlete přes WhatsApp, Telegram, Discord, Instagram, YouTube nebo vlastní databázi. Komunita zůstává vaše. My dodáme Training Arénu.','','invite'],
-['Krok 3','Arena Credits vytvoří pocit skutečného zapojení a odměny.','Arena Credits mění výkon v leaderboardu na viditelnou odměnu. Tradery mohou vstupovat do tréninkových sessions za 20, 50, 100 nebo 200 Arena Credits.','','credits'],
-['Krok 4','Leaderboard ukáže, kdo se opravdu zapojil.','V jednom přehledu vidíte,kdo vstoupil do session, kdo dokočil aktivitu, kdo zůstal aktívní a koho má smysl dál kontaktovat.','','leaderboard'],
-['Partner dashboard','Dashboard ukáže, jak rychle vaše komunita roste.','Sledujte aktivitu a účast v sessions na jednom místě. Lepší přehled dnes. Silnější komerční model později.','','dashboard'],
-['Business směr','Nejdřív Training Arena. Poté komerční model.','Training sessions slouží jako onboarding. Komunita si přes Arena Credits vyzkouší rankinkg, výsledek a princíp odměny. V komečním modelu je stejná logika nastavená tak, aby odměnu získalo 40% nejlépe umístněných traderů.','První message je růst a engagement — ne peníze.','monetization'],
-['Schválení partnera','Partner access otevře používaní nástroje.','Po schválení získa partner přístup k vytváření vlastních sessions a pozvat komunitu a sledovat její aktivitu.','','approval'],
-['Jasná pozice','Soukromé komunitné prostředí pro schválené partnery.','Training Arena neposkytuje investiční poradenství a nedrží klientské prostředky.','','compliance'],
-['Registrace partnera','Požádejte o Partner Access.','Napište nám něco o svém Forex nebo crypto publiku. Po kontrole mohou schválení partneři začít s první soukromou Training Arenou.','Komunita zůstává vaše. My dodáme arénu.','final']
-],roles:['Forex edukátor / mentor','Crypto edukátor / mentor','IB / affiliate partner','Majitel komunity','Tvůrce obsahu / influencer','Chci budovat novou komunitu','Jiné'],markets:['Forex','Crypto','Forex + Crypto','Obecně trading edukace'],statuses:['Už mám komunitu','Mám malé publikum a chci ho zvětšit','Chci budovat novou komunitu','Mám leady / databázi / klienty','Zatím zkoumám model']},
-de:{apply:'Bewerben',continue:'Weiter',back:'Zurück',applyAccess:'Partnerzugang beantragen',form:{eyebrow:'Partnerbewerbung',title:'Partner Access beantragen.',subtitle:'Dies ist keine Anfrage zur Session-Erstellung. Erzähle uns, wer du bist, was du machst und welche Forex- oder Krypto-Community du hast oder aufbauen willst.',name:'Name',email:'E-Mail',whatsapp:'WhatsApp',size:'Größe der Community',role:'Rolle / Profil',market:'Marktfokus',status:'Community-Status',channels:'Hauptkanäle',channelsPh:'WhatsApp, Telegram, Discord, Instagram, YouTube...',intro:'Kurze Vorstellung',introPh:'Erzähle uns, was du machst, welche Zielgruppe du hast oder aufbauen willst und warum Training Arena für dich interessant ist...',submit:'Bewerbung per WhatsApp senden'},steps:[
-['Tool für Forex- & Krypto-Community-Wachstum','Baue deine Trader-Community mit privaten Training Arenas auf.','Für Forex- und Krypto-Educators, IBs, Affiliates, Creator und Community Builder, die ernsthafte Trader gewinnen, aktivieren und verstehen wollen.','Kein Broker. Kein Investment-Angebot. Erst Training.','hero'],
-['Das Problem','Follower zu sammeln ist einfach. Ernsthafte Trader zu finden ist schwerer.','Viele Menschen schauen, lesen, klicken und verschwinden. Training Arena gibt ihnen einen Grund, aktiv zu werden, einer Session beizutreten und echtes Interesse zu zeigen.','','audience'],
-['Schritt 1','Erstelle eine private Training Session.','Richte eine gebrandete Session für dein Forex- oder Krypto-Publikum ein. Es funktioniert für bestehende Communities und für Menschen, die erst eine Community aufbauen wollen.','','session'],
-['Schritt 2','Lade Menschen mit einem einfachen Link ein.','Sende deinen privaten Invite-Link über WhatsApp, Telegram, Discord, Instagram, YouTube oder deine eigene Kontaktliste. Deine Community bleibt deine. Wir liefern die Arena.','','invite'],
-['Schritt 3','Sie treten mit Arena Credits bei.','Training Mode nutzt simulierte Arena Credits, keine echten Kundengelder. Mitglieder können Training Sessions mit 20, 50, 100, 200 oder 500 Arena Credits erleben.','','credits'],
-['Schritt 4','Das Leaderboard erzeugt Aufmerksamkeit.','Mitglieder sehen Aktivität, Bewegung und Ranking. Du siehst, wer beigetreten ist, wer abgeschlossen hat, wer aktiv blieb und wer Follow-up verdient.','','leaderboard'],
-['Partner Dashboard','Mache Aktivität zu einem Signal für Community-Wachstum.','Das Dashboard hilft dir, aktive Teilnehmer, ernsthafte Mitglieder und Menschen zu erkennen, die du erneut kontaktieren solltest.','','dashboard'],
-['Business-Richtung','Erst Training Sessions. Monetarisierung später.','Starte mit Onboarding, Engagement und Training. Wenn ein genehmigter Commercial Mode bereit ist, verstehen Partner bereits, wie das Modell monetarisiert werden kann.','Die erste Botschaft ist Wachstum und Engagement — nicht Geld.','monetization'],
-['Partnerfreigabe','Erst Zugang beantragen. Sessions nach Freigabe erstellen.','Das Registrierungsformular ist nur eine Partnerbewerbung. Es hilft uns zu verstehen, wer du bist, was du machst, welche Zielgruppe du hast oder aufbauen willst und ob Training Arena passt.','','approval'],
-['Klare Positionierung','Private Trainingsumgebung für genehmigte Partner.','Training Arena ist kein Broker, bietet keine Investmentberatung und hält im Training Mode keine Kundengelder.','','compliance'],
-['Partnerregistrierung','Beantrage Partner Access.','Erzähle uns von deinem Forex- oder Krypto-Publikum. Nach Prüfung können genehmigte Partner mit ihrer ersten privaten Training Arena starten.','Deine Community bleibt deine. Wir liefern die Arena.','final']
-],roles:['Forex Educator / Mentor','Krypto Educator / Mentor','IB / Affiliate','Community Owner','Content Creator / Influencer','Ich möchte eine neue Community aufbauen','Andere'],markets:['Forex','Krypto','Forex + Krypto','Trading Education allgemein'],statuses:['Ich habe bereits eine Community','Ich habe ein kleines Publikum und will wachsen','Ich möchte eine neue Community aufbauen','Ich habe Leads / Datenbank / Kunden','Ich prüfe das Modell']}
-};
-let active=0, lang='en';
-const visualBase={hero:`<div class="glow"></div><div class="panel"><div style="display:flex;justify-content:space-between;margin-bottom:16px"><div><div class="tiny">Community growth engine</div><h3 style="font-size:22px;margin:4px 0 0">Forex + Crypto Training Arena</h3></div><span class="ready">Training</span></div><div class="statgrid"><div class="stat"><div class="tiny">Audience</div><div class="big" style="font-size:32px">Build</div></div><div class="stat active"><div class="tiny">Sessions</div><div class="big" style="font-size:32px">Run</div></div><div class="stat"><div class="tiny">Members</div><div class="big" style="font-size:32px">Track</div></div></div></div>`,audience:`<div class="glow"></div><div class="panel"><div class="box"><div class="tiny">Audience potential</div><div class="big">3,240</div><div class="sub">followers, members and contacts</div></div><div class="statgrid" style="margin-top:14px"><div class="stat"><div class="tiny">Silent</div><div class="big" style="font-size:32px">72%</div></div><div class="stat"><div class="tiny">Watching</div><div class="big" style="font-size:32px">21%</div></div><div class="stat active"><div class="tiny">Active</div><div class="big" style="font-size:32px">?</div></div></div></div>`,session:`<div class="glow"></div><div class="panel"><div class="box active"><div class="tiny">New training arena</div><h3 style="font-size:30px">FX & Crypto Challenge</h3><div class="field"><div class="tiny">Mode</div><div class="field-value">Training / Arena Credits</div></div><div class="field"><div class="tiny">Audience</div><div class="field-value">Forex or crypto community</div></div><div class="field"><div class="tiny">Access</div><div class="field-value">Private invite only</div></div></div></div>`,invite:`<div class="glow"></div><div class="panel"><div class="box"><div class="tiny">Private invite link</div><div class="field-value" style="margin-top:16px;background:rgba(0,0,0,.24);padding:16px;border-radius:18px;color:#d1fae5">arenix.app/join/training-arena</div><div class="invite"><b>WhatsApp / Telegram</b><span class="ready">Ready</span></div><div class="invite"><b>Discord / YouTube</b><span class="ready">Ready</span></div><div class="invite"><b>New community funnel</b><span class="ready">Ready</span></div></div></div>`,credits:`<div class="glow"></div><div class="panel"><div class="credits"><div class="credit active"><div class="tiny">Start balance</div><div class="big">500</div><div class="sub">Arena Credits</div></div><div class="credit"><div class="tiny">Training session credit options</div><div style="margin-top:14px"><span class="chip">20</span><span class="chip">50</span><span class="chip">100</span><span class="chip">200</span><span class="chip">500</span></div><div class="sub">Arena Credit options</div></div><div class="credit"><div class="tiny">Real deposit</div><div class="big">0</div><div class="sub">Training Mode</div></div><div class="credit active"><div class="tiny">Client funds</div><div class="big">No</div><div class="sub">Not held</div></div></div></div>`,leaderboard:`<div class="glow"></div><div class="panel"><div class="leader"><div class="leader-head"><div class="tiny">Live leaderboard</div><b style="color:#d1fae5">Arena Credits</b></div><div class="lrow"><span class="rank">01</span><div><b>Trader Alpha</b><div class="jr-text">Completed training session</div></div><span class="score">+184 AC</span><span class="signal">High</span></div><div class="lrow"><span class="rank">02</span><div><b>Trader Nova</b><div class="jr-text">Completed training session</div></div><span class="score">+132 AC</span><span class="signal">High</span></div></div></div>`,dashboard:`<div class="glow"></div><div class="panel"><div class="statgrid"><div class="stat"><div class="tiny">Registered</div><div class="big" style="font-size:32px">82</div></div><div class="stat active"><div class="tiny">Joined</div><div class="big" style="font-size:32px">47</div></div><div class="stat"><div class="tiny">Follow-up</div><div class="big" style="font-size:32px">18</div></div></div></div>`,monetization:`<div class="glow"></div><div class="panel"><div class="mini-row"><span class="icon">👥</span><div><h3>Community first</h3><div class="sub">Grow and activate the audience.</div></div></div><div class="mini-row" style="margin-top:14px"><span class="icon">💳</span><div><h3>Commercial mode later</h3><div class="sub">Only after the model is understood and approved.</div></div></div></div>`,approval:`<div class="glow"></div><div class="panel"><div class="box"><div class="tiny">Partner application</div><div class="field"><div class="tiny">Who are you?</div><div class="field-value">Educator / IB / Affiliate / Creator</div></div><div class="field"><div class="tiny">Market focus</div><div class="field-value">Forex / Crypto / Both</div></div><div class="field"><div class="tiny">Community status</div><div class="field-value">Existing or starting new</div></div></div></div>`,compliance:`<div class="glow"></div><div class="panel"><div class="comp-list"><div class="comp-line"><span class="shield">✓</span><b>Training Arena is not a broker.</b></div><div class="comp-line"><span class="shield">✓</span><b>Training Arena does not provide investment advice.</b></div><div class="comp-line"><span class="shield">✓</span><b>Training Arena does not hold client funds in Training Mode.</b></div></div></div>`,final:`<div class="glow"></div><div class="panel"><div class="box active" style="text-align:center;padding:32px"><div style="font-size:38px">💬</div><h3 style="font-size:30px">Partner application</h3><p class="sub" style="line-height:1.75">Open registration form and send application on WhatsApp.</p><button class="btn btn-primary btn-large" onclick="openRequest()" style="margin-top:18px">Open Form</button></div></div>`};
-function setLang(l){softRender(function(){lang=l;});}
-function render(){const d=data[lang],s=d.steps[active];document.querySelectorAll('.lang button').forEach(b=>b.classList.remove('active'));document.getElementById('lang-'+lang).classList.add('active');document.querySelector('header .btn-primary').textContent=d.apply;document.getElementById('num').textContent=String(active+1).padStart(2,'0');document.getElementById('eyebrow').textContent=s[0];document.getElementById('title').textContent=s[1];document.getElementById('text').textContent=s[2];document.getElementById('note').textContent=s[3]||'';document.getElementById('note').style.display=s[3]?'block':'none';document.getElementById('visual').innerHTML=visualBase[s[4]];document.getElementById('backBtn').style.display=active===0?'none':'inline-flex';document.getElementById('backBtn').textContent=d.back;document.getElementById('continueBtn').innerHTML=active===d.steps.length-1?d.applyAccess+' 💬':d.continue+' →';document.getElementById('progressBar').style.width=((active+1)/d.steps.length*100)+'%';document.getElementById('dots').innerHTML=d.steps.map((_,i)=>`<button class="dot ${i===active?'active':i<active?'done':''}" onclick="jumpStep(${i})"></button>`).join('');renderForm(d);}
-function renderChoices(id,arr){document.getElementById(id).innerHTML=arr.map((x,i)=>`<button type="button" class="choice ${i===0?'active':''}" onclick="this.parentNode.querySelectorAll('.choice').forEach(b=>b.classList.remove('active'));this.classList.add('active')">${x}</button>`).join('');}
-function renderForm(d){document.getElementById('formEyebrow').textContent=d.form.eyebrow;document.getElementById('formTitle').textContent=d.form.title;document.getElementById('formSubtitle').textContent=d.form.subtitle;document.getElementById('labelName').childNodes[0].textContent=d.form.name;document.getElementById('labelEmail').childNodes[0].textContent=d.form.email;document.getElementById('labelWhatsApp').childNodes[0].textContent=d.form.whatsapp;document.getElementById('labelSize').childNodes[0].textContent=d.form.size;document.getElementById('labelRole').textContent=d.form.role;document.getElementById('labelMarket').textContent=d.form.market;document.getElementById('labelStatus').textContent=d.form.status;document.getElementById('labelChannels').childNodes[0].textContent=d.form.channels;document.getElementById('channelsInput').placeholder=d.form.channelsPh;document.getElementById('labelIntro').childNodes[0].textContent=d.form.intro;document.getElementById('introText').placeholder=d.form.introPh;document.getElementById('submitBtn').textContent=d.form.submit;renderChoices('roleChoices',d.roles);renderChoices('marketChoices',d.markets);renderChoices('statusChoices',d.statuses);}
-function softRender(update){const s=document.querySelector('.screen'); if(!s){update();render();return;} s.classList.add('is-switching'); setTimeout(function(){update();render();requestAnimationFrame(function(){s.classList.remove('is-switching')});},140)}
-function jumpStep(i){softRender(function(){active=i;});}
-function goNext(){if(active===data[lang].steps.length-1){openRequest();return;}softRender(function(){active++;});}
-function goBack(){if(active>0){softRender(function(){active--;});}}function openRequest(){document.getElementById('requestModal').classList.add('open')}function closeModals(){document.querySelectorAll('.modal').forEach(m=>m.classList.remove('open'))}document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModals();if(e.key==='ArrowRight'||e.key==='Enter')goNext();if(e.key==='ArrowLeft')goBack();});document.querySelectorAll('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)closeModals()}));
-/* Premium 2026 finance background — subtle BTC / FX / USD atmosphere, no external libraries */
-(function(){
-  const canvas = document.getElementById('arenaCanvas');
-  const aura = document.getElementById('cursorAura');
-  if(!canvas) return;
-  const ctx = canvas.getContext('2d');
-  let w = 0, h = 0, dpr = 1, t = 0;
-  let particles = [], glyphs = [], candles = [];
-  const mouse = {x:0, y:0, active:false};
-
-  function isMobile(){ return window.innerWidth < 951; }
-
-  function resize(){
-    dpr = Math.min(window.devicePixelRatio || 1, 2);
-    w = window.innerWidth; h = window.innerHeight;
-    canvas.width = Math.floor(w*dpr); canvas.height = Math.floor(h*dpr);
-    canvas.style.width = w+'px'; canvas.style.height = h+'px';
-    ctx.setTransform(dpr,0,0,dpr,0,0);
-
-    const mobile = isMobile();
-    const particleCount = mobile ? 26 : Math.min(118, Math.max(54, Math.floor((w*h)/14500)));
-    const glyphCount = mobile ? 3 : 14;
-    const candleCount = mobile ? 8 : 24;
-
-    particles = Array.from({length:particleCount}, function(){
-      return {
-        a:Math.random()*Math.PI*2,
-        r:60+Math.random()*Math.min(w,h)*0.58,
-        s:.0012+Math.random()*.0028,
-        z:.26+Math.random()*.88,
-        off:Math.random()*Math.PI*2,
-        pulse:Math.random()*Math.PI*2
-      };
-    });
-
-    const symbols = ['₿','$','€','FX','AC'];
-    glyphs = Array.from({length:glyphCount}, function(_,i){
-      return {
-        txt:symbols[i%symbols.length],
-        x:Math.random()*w,
-        y:Math.random()*h,
-        size: mobile ? 13+Math.random()*8 : 14+Math.random()*24,
-        speed:.05+Math.random()*.16,
-        drift:(Math.random()-.5)*.18,
-        rot:Math.random()*Math.PI*2,
-        rs:(Math.random()-.5)*.004,
-        alpha: mobile ? .035+Math.random()*.035 : .035+Math.random()*.075,
-        gold:i%3===0
-      }
-    });
-
-    candles = Array.from({length:candleCount}, function(){
-      return {
-        x:Math.random()*w,
-        y:Math.random()*h,
-        h: mobile ? 10+Math.random()*28 : 14+Math.random()*46,
-        w: mobile ? 3 : 4+Math.random()*3,
-        speed:.12+Math.random()*.28,
-        alpha: mobile ? .025+Math.random()*.035 : .045+Math.random()*.07,
-        up:Math.random()>.45
-      }
-    });
-  }
-
-  function draw(){
-    t += 1;
-    ctx.clearRect(0,0,w,h);
-
-    const mobile = isMobile();
-    const baseX = mobile ? w*.76 : w*.72;
-    const baseY = mobile ? h*.24 : h*.52;
-    const mx = mouse.active && !mobile ? (mouse.x-w/2)*.035 : 0;
-    const my = mouse.active && !mobile ? (mouse.y-h/2)*.035 : 0;
-    const cx = baseX + mx;
-    const cy = baseY + my;
-
-    const glow = ctx.createRadialGradient(cx,cy,0,cx,cy,Math.min(w,h)*(mobile ? .72 : .56));
-    glow.addColorStop(0,'rgba(52,211,153,'+(mobile ? .11 : .18)+')');
-    glow.addColorStop(.32,'rgba(59,130,246,'+(mobile ? .045 : .075)+')');
-    glow.addColorStop(.58,'rgba(245,158,11,'+(mobile ? .026 : .040)+')');
-    glow.addColorStop(1,'rgba(0,0,0,0)');
-    ctx.fillStyle=glow;
-    ctx.fillRect(0,0,w,h);
-
-    const pts=particles.map(function(p){
-      const a=p.a+t*p.s, wave=Math.sin(t*.010+p.off)*18;
-      return {
-        x:cx+Math.cos(a)*(p.r+wave)*p.z,
-        y:cy+Math.sin(a*1.22)*(p.r*.46+wave)*p.z,
-        z:p.z,pulse:p.pulse
-      };
-    });
-
-    if(!mobile){
-      for(let i=0;i<pts.length;i++){
-        for(let j=i+1;j<pts.length;j++){
-          const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,dist=Math.sqrt(dx*dx+dy*dy);
-          if(dist<108){
-            ctx.strokeStyle='rgba(52,211,153,'+((1-dist/108)*.13)+')';
-            ctx.lineWidth=.7;
-            ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.stroke();
-          }
-        }
-      }
-    }
-
-    pts.forEach(function(p){
-      const size=mobile ? .75+p.z*.85 : 1.0+p.z*1.65+Math.sin(t*.04+p.pulse)*.35;
-      ctx.fillStyle='rgba(209,250,229,'+(mobile ? .18 : .30+p.z*.24)+')';
-      ctx.beginPath();ctx.arc(p.x,p.y,size,0,Math.PI*2);ctx.fill();
-    });
-
-    glyphs.forEach(function(g){
-      g.y -= g.speed;
-      g.x += g.drift;
-      g.rot += g.rs;
-      if(g.y < -60){g.y = h+60; g.x = Math.random()*w;}
-      ctx.save();
-      ctx.translate(g.x,g.y);
-      ctx.rotate(g.rot);
-      ctx.font='900 '+g.size+'px Inter, Arial, sans-serif';
-      ctx.textAlign='center';
-      ctx.textBaseline='middle';
-      ctx.fillStyle = g.gold ? 'rgba(245,158,11,'+g.alpha+')' : 'rgba(209,250,229,'+g.alpha+')';
-      ctx.fillText(g.txt,0,0);
-      ctx.restore();
-    });
-
-    candles.forEach(function(c){
-      c.y -= c.speed;
-      if(c.y < -70){c.y = h+70; c.x = Math.random()*w; c.up = Math.random()>.45;}
-      const col = c.up ? '52,211,153' : '96,165,250';
-      ctx.strokeStyle='rgba('+col+','+c.alpha+')';
-      ctx.fillStyle='rgba('+col+','+(c.alpha*.75)+')';
-      ctx.lineWidth=1;
-      ctx.beginPath();ctx.moveTo(c.x,c.y-c.h*.72);ctx.lineTo(c.x,c.y+c.h*.72);ctx.stroke();
-      ctx.fillRect(c.x-c.w/2,c.y-c.h*.24,c.w,c.h*.48);
-    });
-
-    if(!mobile){
-      ctx.save();ctx.translate(cx,cy);
-      for(let k=0;k<4;k++){
-        const radius=52+k*38+Math.sin(t*.018+k)*4;
-        ctx.strokeStyle=k%2?'rgba(96,165,250,.12)':'rgba(52,211,153,.14)';
-        if(k===3) ctx.strokeStyle='rgba(245,158,11,.08)';
-        ctx.lineWidth=1;
-        ctx.beginPath();ctx.ellipse(0,0,radius,radius*(.36+k*.03),t*.004*(k+1),0,Math.PI*2);ctx.stroke();
-      }
-      ctx.fillStyle='rgba(52,211,153,.78)';
-      ctx.beginPath();ctx.arc(0,0,4.0+Math.sin(t*.07)*1.2,0,Math.PI*2);ctx.fill();
-      ctx.restore();
-    }
-
-    requestAnimationFrame(draw);
-  }
-
-  window.addEventListener('resize', resize);
-  window.addEventListener('mousemove', function(e){
-    mouse.x=e.clientX; mouse.y=e.clientY; mouse.active=true;
-    if(aura){aura.style.transform='translate3d('+e.clientX+'px,'+e.clientY+'px,0)';}
-    if(!isMobile()){
-      document.querySelectorAll('.panel').forEach(function(panel){
-        const rect=panel.getBoundingClientRect(), px=(e.clientX-(rect.left+rect.width/2))/rect.width, py=(e.clientY-(rect.top+rect.height/2))/rect.height;
-        panel.style.setProperty('--ry',(px*4).toFixed(2)+'deg'); panel.style.setProperty('--rx',(-py*4).toFixed(2)+'deg');
-      });
-    }
-  });
-  window.addEventListener('mouseleave', function(){mouse.active=false;if(aura)aura.style.opacity='0';});
-  window.addEventListener('mouseenter', function(){if(aura)aura.style.opacity='.86';});
-  resize(); draw();
-})();
-
+const steps=[
+{kicker:'Community Creator',headline:'Forex & Crypto Community Creator Tool',subline:'Nástroj pro vytvoření, růst a aktivaci vlastní Forex a Crypto komunity. Partner nečeká, až lidé začnou reagovat sami — otevře jim arénu, do které mají tradeři důvod vstoupit.',note:'Vaše komunita zůstává vaše. My dodáme arénu.',visual:'creator'},
+{kicker:'Action Layer',headline:'Training Session dá publiku konkrétní akci',subline:'Lidé už jen nesledují další příspěvek, video nebo signál. Dostanou konkrétní vstup do privátní session, kde se mohou zapojit, ukázat aktivitu a stát se viditelnými.',note:'Pasivní publikum se mění na aktivní účastníky.',visual:'action'},
+{kicker:'First Entry',headline:'Training Arena je první vstup do světa Trading Areny',subline:'Trader si přes Arena Credits vyzkouší princip arény, vstup do session, ranking, výsledek a pocit odměny už v Training Mode. Nečte teorii. Zažije model v simulované formě.',note:'Training Mode ukazuje logiku arény ještě před komerční verzí.',visual:'bridge'},
+{kicker:'Partner Gate',headline:'Partner otevře vlastní arénu pro své tradery',subline:'Trader se do privátní arény nedostane sám. Přístup mu otevře partner přes vlastní Training Arenu. Tím partner buduje komunitu kolem svého jména, svého publika a svého vztahu s tradery.',note:'Partner je vstupní brána do své privátní arény.',visual:'partner'},
+{kicker:'Invite Link',headline:'Jeden link spustí vstup do arény',subline:'Partner pošle jeden invite link do své skupiny, databáze, Discordu, Telegramu, WhatsAppu nebo YouTube publika. Kdo chce zažít arénu, vstupuje přes partnera.',note:'Není třeba měnit kanály. Aréna se přidá jako akční vrstva nad tím, co už partner má.',visual:'link'},
+{kicker:'Arena Credits',headline:'Arena Credits ukážou celý cyklus arény během několika hodin',subline:'Trader vstoupí do session, Entry Credits se rezervují, leaderboard běží a po skončení session se zobrazí Final Arena Credits podle výsledku. Rychle, přehledně a bez čekání.',note:'Trader zažije pohyb arény v jednom krátkém cyklu.',visual:'credits'},
+{kicker:'Leaderboard',headline:'Leaderboard ukáže výkon, pořadí a výsledek',subline:'Každá session má viditelný výsledek. Trader vidí svoji pozici, změnu Arena Credits a své místo v aréně. Partner vidí, kdo se opravdu zapojil a kdo jen sleduje z dálky.',note:'Trader získá status. Partner získá přehled.',visual:'leaderboard'},
+{kicker:'Distribution Key',headline:'Aréna odměňuje 40 ze 100 traderů podle pevného klíče',subline:'Model Trading Areny není postavený jen na jednom vítězi. Distribuční klíč počítá s tím, že odměnu získává 40 ze 100 traderů podle pravidel arény — včetně traderů, kteří nemusí být absolutně na prvním místě.',note:'Training Arena ukáže tento princip přes simulované Arena Credits.',visual:'reward'},
+{kicker:'Dashboard',headline:'Dashboard ukáže růst, aktivitu a sílu komunity',subline:'Partner vidí, kolik lidí pozval, kdo vstoupil do session, kdo zůstal aktivní, kdo se umístil v leaderboardu a jak se komunita vyvíjí. Čím lépe zná svou komunitu dnes, tím lépe s ní může pracovat v budoucím komerčním modelu.',note:'Dashboard není report. Je to ovládací panel komunity.',visual:'dashboard'},
+{kicker:'Trust by Rules',headline:'Pevná pravidla arény vytvářejí důvěru',subline:'Partner přivádí komunitu, otevírá session a pracuje s publikem. Výsledek session se ale řídí pravidly arény, leaderboardem, Arena Credits a distribuční logikou nástroje. Pravidla nejsou o ručním rozhodování.',note:'Důvěra nevzniká ze slibů. Vzniká z pravidel, rychlosti a transparentního výsledku.',visual:'rules'}];
+let active=0;
+function card(title,badge,inner){return `<div class="visual-glow"></div><div class="card"><div class="card-head"><div><div class="tiny">${badge}</div><div class="card-title">${title}</div></div><span class="badge">${String(active+1).padStart(2,'0')} / 10</span></div>${inner}</div>`}
+function renderVisual(type){
+ if(type==='creator')return card('Community Creator','Tool Output',`<div class="grid3"><div class="box"><div class="tiny">Audience</div><div class="big">0 → 640</div><div class="small">community growth path</div></div><div class="box active"><div class="tiny">Private Arena</div><div class="big">Active</div><div class="small">owned by partner</div></div><div class="box"><div class="tiny">Sessions</div><div class="big">Run</div><div class="small">reason to enter</div></div></div>`);
+ if(type==='action')return card('Passive → Active','Audience Flow',`<div class="flow">${['Watching','Invited','Joined','Active'].map((x,i)=>`<div class="flow-row"><span class="rank">${String(i+1).padStart(2,'0')}</span><div><div class="flow-title">${x}</div><div class="flow-sub">${i===0?'content watcher':i===1?'private invite sent':i===2?'entered session':'visible participant'}</div></div><span class="status ${i>1?'green':''}">${i===3?'Visible':'Step'}</span></div>`).join('')}</div>`);
+ if(type==='bridge')return card('Training → Trading Arena','First Entry',`<div class="grid2"><div class="box active"><div class="tiny">Training Arena</div><div class="big">AC</div><div class="small">Arena Credits · leaderboard · result</div></div><div class="box gold"><div class="tiny">Next Layer</div><div class="big">TA</div><div class="small">same logic · commercial review later</div></div></div><div class="flow-row" style="margin-top:12px"><span class="rank">→</span><div><div class="flow-title">Trader experiences the model first</div><div class="flow-sub">simple simulated form before commercial version</div></div><span class="status green">Bridge</span></div>`);
+ if(type==='partner')return card('Partner Arena','Invite Only',`<div class="grid2"><div class="box active"><div class="tiny">Access</div><div class="big">Link</div><div class="small">opened by partner</div></div><div class="box"><div class="tiny">Community</div><div class="big">Own</div><div class="small">partner relationship stays</div></div></div><div class="flow-row" style="margin-top:12px"><span class="rank">🔒</span><div><div class="flow-title">No partner invite. No private entry.</div><div class="flow-sub">the partner becomes the gate to the arena</div></div><span class="status green">Private</span></div>`);
+ if(type==='link')return card('One Invite Link','Existing Channels Stay',`<div class="flow">${['Telegram','WhatsApp','Discord','YouTube'].map(x=>`<div class="flow-row"><span class="check">✓</span><div><div class="flow-title">${x}</div><div class="flow-sub">keep channel · add arena layer</div></div><span class="status green">Ready</span></div>`).join('')}</div>`);
+ if(type==='credits')return card('Arena Credit Lifecycle','Few Hours',`<div class="lifecycle"><div class="life-line"></div><div class="life"><span class="life-dot">1</span><div><div class="flow-title">Start Balance</div><div class="flow-sub">simulated training value</div></div><span class="value">500 AC</span></div><div class="life"><span class="life-dot">2</span><div><div class="flow-title">Entry Credits Reserved</div><div class="flow-sub">session entry logic</div></div><span class="value">100 AC</span></div><div class="life"><span class="life-dot">3</span><div><div class="flow-title">Session Live</div><div class="flow-sub">leaderboard running</div></div><span class="value">03:42:18</span></div><div class="life"><span class="life-dot">4</span><div><div class="flow-title">Final Arena Credits</div><div class="flow-sub">visible result after session</div></div><span class="value">653 AC</span></div></div>`);
+ if(type==='leaderboard')return card('Live Result Board','Status + Result',`<div class="leader">${[['#1','Trader Alpha','Completed session','812 AC','Active'],['#2','Trader Nova','High participation','653 AC','Follow'],['#3','Trader X','Visible result','610 AC','Status']].map(r=>`<div class="leader-row"><span class="rank">${r[0]}</span><div><div class="flow-title">${r[1]}</div><div class="flow-sub">${r[2]}</div></div><span class="score">${r[3]}</span><span class="status green">${r[4]}</span></div>`).join('')}</div>`);
+ if(type==='reward'){let dots='';for(let i=1;i<=100;i++){dots+=`<span class="trader-dot ${i<=40?'reward':''}"></span>`}return card('Top 40 / 100 Reward Zone','Fixed Key',`<div class="grid3" style="margin-bottom:14px"><div class="box"><div class="tiny">Session</div><div class="big">100</div><div class="small">traders</div></div><div class="box active"><div class="tiny">Reward Zone</div><div class="big">40</div><div class="small">positions</div></div><div class="box gold"><div class="tiny">Rules</div><div class="big">Fixed</div><div class="small">distribution key</div></div></div><div class="dots100">${dots}</div>`)}
+ if(type==='dashboard')return card('Partner Dashboard','Community Control Panel',`<div class="metric-row">${[['Invited','420'],['Joined','186'],['Active','73'],['Completed','58'],['Follow-up','24']].map(m=>`<div class="metric"><div class="tiny">${m[0]}</div><div class="big">${m[1]}</div></div>`).join('')}</div><div class="flow-row" style="margin-top:12px"><span class="rank">📊</span><div><div class="flow-title">Growth, activity and quality in one place</div><div class="flow-sub">not a report — a control panel</div></div><span class="status green">Live</span></div>`);
+ if(type==='rules')return card('Rules Create Trust','Locked Logic',`<div class="lock-list">${[['Session Rules','Locked'],['Distribution Key','Fixed'],['Result','Verified'],['Manual Change','Disabled']].map((r,i)=>`<div class="lock-item"><div style="display:flex;gap:12px;align-items:center"><span class="check">✓</span><b>${r[0]}</b></div><span class="status ${i<2?'green':'gold'}">${r[1]}</span></div>`).join('')}</div>`);
+ return ''
+}
+function render(){const s=steps[active];document.getElementById('num').textContent=String(active+1).padStart(2,'0');document.getElementById('kicker').textContent=s.kicker;document.getElementById('headline').textContent=s.headline;document.getElementById('subline').textContent=s.subline;document.getElementById('note').textContent=s.note;document.getElementById('visual').innerHTML=renderVisual(s.visual);document.getElementById('backBtn').style.display=active===0?'none':'inline-flex';document.getElementById('continueBtn').innerHTML=active===steps.length-1?'Požádat o Partner Access →':'Pokračovat →';document.getElementById('progressBar').style.width=((active+1)/steps.length*100)+'%';document.getElementById('dots').innerHTML=steps.map((_,i)=>`<button class="dot ${i===active?'active':i<active?'done':''}" onclick="jump(${i})" aria-label="Step ${i+1}"></button>`).join('')}
+function transition(update){const screen=document.getElementById('screen');screen.classList.add('switching');setTimeout(()=>{update();render();requestAnimationFrame(()=>screen.classList.remove('switching'))},140)}
+function goNext(){if(active===steps.length-1){openApply();return}transition(()=>active++)}
+function goBack(){if(active>0)transition(()=>active--)}
+function jump(i){transition(()=>active=i)}
+function openApply(){document.getElementById('applyModal').classList.add('open')}
+function closeApply(){document.getElementById('applyModal').classList.remove('open')}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')goNext();if(e.key==='ArrowLeft')goBack();if(e.key==='Escape')closeApply()});
+document.getElementById('applyModal').addEventListener('click',e=>{if(e.target.id==='applyModal')closeApply()});
 render();
 </script>
 </body>
